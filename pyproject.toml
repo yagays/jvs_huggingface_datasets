@@ -1,0 +1,48 @@
+[tool.poetry]
+name = "jvs_huggingface_datasets"
+version = "0.1.0"
+description = ""
+authors = ["Yuki Okuda <y.okuda@dr-ubie.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+datasets = "^1.18.3"
+pandas = "^1.4.1"
+
+[tool.poetry.dev-dependencies]
+ipython = "^8.1.0"
+ipdb = "^0.13.9"
+black = "^22.1.0"
+isort = "^5.10.1"
+torchaudio = "^0.10.2"
+notebook = "^6.4.8"
+
+[tool.black]
+line-length = 120
+target-version = ['py38']
+include = '\.pyi?$'
+exclude = '''
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+)
+'''
+
+[tool.isort]
+profile = "hug"
+line_length = 120
+src_paths = ["./"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
